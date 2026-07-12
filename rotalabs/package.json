@@ -1,0 +1,60 @@
+{
+  "name": "@rotalabs/rotalabs",
+  "version": "0.1.1",
+  "description": "Trust Intelligence Research - Core package with shared utilities",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./telemetry": {
+      "import": "./dist/telemetry/index.js",
+      "types": "./dist/telemetry/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "ai",
+    "trust",
+    "machine-learning",
+    "rotalabs",
+    "telemetry"
+  ],
+  "author": "Rotalabs <dev@rotalabs.ai>",
+  "license": "Apache-2.0",
+  "homepage": "https://rotalabs.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rotalabs/rotalabs.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/uuid": "^9.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "peerDependencies": {},
+  "sideEffects": false
+}

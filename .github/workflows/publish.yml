@@ -1,0 +1,43 @@
+name: Publish packages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node 24 bundles npm >= 11.5.1, required for the OIDC trusted-publishing
+      # handshake. Do NOT set registry-url here: setup-node would write an
+      # _authToken line into .npmrc, which makes npm skip OIDC entirely.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Publish packages whose version is not on the registry
+        run: |
+          set -e
+          for dir in */; do
+            [ -f "$dir/package.json" ] || continue
+            name=$(node -p "require('./$dir/package.json').name")
+            version=$(node -p "require('./$dir/package.json').version")
+            published=$(npm view "$name" version 2>/dev/null || echo "none")
+            if [ "$version" = "$published" ]; then
+              echo "skip $name@$version (already on registry)"
+              continue
+            fi
+            echo "publish $name@$version (registry has $published)"
+            (
+              cd "$dir"
+              if [ -f package-lock.json ]; then npm ci; else npm install; fi
+              npm publish --access public --provenance
+            )
+          done

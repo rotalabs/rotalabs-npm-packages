@@ -1,0 +1,7 @@
+# redqueen lives in its own repo: rotalabs/rotalabs-redqueen-js
+redqueen/
+
+node_modules/
+dist/
+*.log
+.DS_Store

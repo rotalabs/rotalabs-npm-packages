@@ -1,0 +1,19 @@
+{
+  "name": "@rotalabs/probe",
+  "version": "0.0.2",
+  "description": "Sandbagging detection via metacognitive probes",
+  "main": "index.js",
+  "keywords": [
+    "ai",
+    "trust",
+    "machine-learning",
+    "rotalabs"
+  ],
+  "author": "Rotalabs <dev@rotalabs.ai>",
+  "license": "Apache-2.0",
+  "homepage": "https://rotalabs.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rotalabs/rotalabs-probe.git"
+  }
+}
