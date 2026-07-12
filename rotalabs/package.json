@@ -41,7 +41,8 @@
   "homepage": "https://rotalabs.ai",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rotalabs/rotalabs.git"
+    "url": "git+https://github.com/rotalabs/rotalabs-npm-packages.git",
+    "directory": "rotalabs"
   },
   "engines": {
     "node": ">=18.0.0"

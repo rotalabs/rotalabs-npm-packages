@@ -14,6 +14,7 @@
   "homepage": "https://rotalabs.ai",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rotalabs/rotalabs-comply.git"
+    "url": "git+https://github.com/rotalabs/rotalabs-npm-packages.git",
+    "directory": "comply"
   }
 }
