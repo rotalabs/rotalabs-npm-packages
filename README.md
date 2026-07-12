@@ -1,6 +1,6 @@
 # Rotalabs npm packages
 
-Monorepo for the `@rotalabs/*` npm libraries — TypeScript/JavaScript counterparts of the [Rotalabs PyPI packages](https://pypi.org/user/rotalabs/) for AI trust, evaluation, and reliability.
+Monorepo for the `@rotalabs/*` npm libraries: TypeScript/JavaScript counterparts of the [Rotalabs PyPI packages](https://pypi.org/user/rotalabs/) for AI trust, evaluation, and reliability.
 
 | Package | Description |
 |---|---|
@@ -25,7 +25,7 @@ Packages publish to npm via keyless [Trusted Publishing](https://docs.npmjs.com/
 
 ## License
 
-Apache-2.0 — see each package's LICENSE and NOTICE files. (Red Queen, in its own repo, is AGPL-3.0-or-later with commercial licensing available.)
+Apache-2.0. See each package's LICENSE and NOTICE files. (Red Queen, in its own repo, is AGPL-3.0-or-later with commercial licensing available.)
 
 ## Links
 
